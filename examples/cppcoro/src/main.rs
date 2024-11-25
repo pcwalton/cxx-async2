@@ -12,6 +12,7 @@ use futures::{StreamExt, TryStreamExt};
 use once_cell::sync::Lazy;
 use std::future::Future;
 use std::ops::Range;
+use std::pin::Pin;
 
 #[cxx::bridge]
 mod ffi {

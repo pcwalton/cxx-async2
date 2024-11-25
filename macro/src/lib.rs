@@ -120,8 +120,9 @@ fn bridge_future(pieces: AstPieces) -> TokenStream {
             //    method.
             // 3. The struct isn't `repr(packed)`. We define the struct and don't have this
             //    attribute.
-            ::cxx_async::unsafe_pinned!(future: ::cxx_async::private::BoxFuture<'static,
-                ::cxx_async::CxxAsyncResult<#output>>);
+            fn future(self: Pin<&mut Self>) -> Pin<&mut ::cxx_async::private::BoxFuture<'static, ::cxx_async::CxxAsyncResult<#output>>> {
+                unsafe { self.map_unchecked_mut(|s| &mut s.future) }
+            }
 
             #[doc(hidden)]
             fn assert_field_is_unpin() {
@@ -272,8 +273,9 @@ fn bridge_stream(pieces: AstPieces) -> TokenStream {
             //    method.
             // 3. The struct isn't `repr(packed)`. We define the struct and don't have this
             //    attribute.
-            ::cxx_async::unsafe_pinned!(stream: ::cxx_async::private::BoxStream<'static,
-                ::cxx_async::CxxAsyncResult<#item>>);
+            fn stream(self: Pin<&mut Self>) -> Pin<&mut ::cxx_async::private::BoxStream<'static, ::cxx_async::CxxAsyncResult<#item>>> {
+                unsafe { self.map_unchecked_mut(|s| &mut s.stream) }
+            }
 
             #[doc(hidden)]
             fn assert_field_is_unpin() {

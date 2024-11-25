@@ -4,24 +4,13 @@ version = 4
 
 [[package]]
 name = "async-recursion"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d7d78656ba01f1b93024b7c3a0467f1608e4be67d725749fdcd7d2c7678fd7a2"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
-name = "async-recursion"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.82",
+ "syn",
 ]
 
 [[package]]
@@ -65,14 +54,13 @@ dependencies = [
 name = "cxx-async"
 version = "0.1.2"
 dependencies = [
- "async-recursion 1.1.1",
+ "async-recursion",
  "cxx",
  "cxx-async-macro",
  "cxx-build",
  "futures",
  "link-cplusplus",
  "once_cell",
- "pin-utils",
  "pkg-config",
 ]
 
@@ -80,7 +68,7 @@ dependencies = [
 name = "cxx-async-example-cppcoro"
 version = "0.1.0"
 dependencies = [
- "async-recursion 0.3.2",
+ "async-recursion",
  "cxx",
  "cxx-async",
  "cxx-build",
@@ -93,7 +81,7 @@ dependencies = [
 name = "cxx-async-example-folly"
 version = "0.1.0"
 dependencies = [
- "async-recursion 0.3.2",
+ "async-recursion",
  "cxx",
  "cxx-async",
  "cxx-build",
@@ -108,7 +96,7 @@ version = "0.1.2"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 1.0.109",
+ "syn",
 ]
 
 [[package]]
@@ -123,7 +111,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "scratch",
- "syn 2.0.82",
+ "syn",
 ]
 
 [[package]]
@@ -140,7 +128,7 @@ checksum = "a1719100f31492cd6adeeab9a0f46cdbc846e615fdb66d7b398aa46ec7fdd06f"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.82",
+ "syn",
 ]
 
 [[package]]
@@ -211,7 +199,7 @@ checksum = "162ee34ebcb7c64a8abebc059ce0fee27c2262618d7b60ed8faf72fef13c3650"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.82",
+ "syn",
 ]
 
 [[package]]
@@ -346,17 +334,6 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.109"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
-dependencies = [
- "proc-macro2",
- "quote",
- "unicode-ident",
-]
-
-[[package]]
-name = "syn"
 version = "2.0.82"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "83540f837a8afc019423a8edb95b52a8effe46957ee402287f4292fae35be021"
@@ -392,7 +369,7 @@ checksum = "ae71770322cbd277e69d762a16c444af02aa0575ac0d174f0b9562d3b37f8602"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.82",
+ "syn",
 ]
 
 [[package]]

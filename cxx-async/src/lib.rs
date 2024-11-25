@@ -188,9 +188,6 @@ const SEND_RESULT_FINISHED: u32 = 2;
 
 pub use cxx_async_macro::bridge;
 
-#[doc(hidden)]
-pub use pin_utils::unsafe_pinned;
-
 // Replacements for macros that panic that are guaranteed to cause an abort, so that we don't unwind
 // across C++ frames.
 
